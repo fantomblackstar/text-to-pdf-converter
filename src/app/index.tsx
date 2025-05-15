@@ -1,8 +1,13 @@
 import { Routing } from "../pages";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 
-function App() {
-  return <Routing />;
-}
-
-export default App;
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
+  </StrictMode>
+);
