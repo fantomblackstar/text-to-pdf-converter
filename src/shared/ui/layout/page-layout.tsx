@@ -5,7 +5,7 @@ const PageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="container">{children}</main>
+      <main className="container py-10 lg:py-20">{children}</main>
     </>
   );
 };

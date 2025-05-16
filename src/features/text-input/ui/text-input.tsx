@@ -24,11 +24,11 @@ const TextInput: React.FC<TextInputProps> = ({ onTextChange, text }) => {
   };
 
   return (
-    <div className="h-[60vh] md:h-80 xl:h-[31.25rem] w-full rounded-lg relative bg-blue-600 p-2 lg:p-4 mb-4 lg:mb-8">
+    <div className="h-[60vh] md:h-80 xl:h-[31.25rem] w-full rounded-lg relative bg-blue-500 p-2 lg:p-4 mb-4 lg:mb-8">
       <textarea
         value={text}
         onChange={onTextareaChange}
-        className="w-full h-full border-2 border-dashed bg-blue-800 rounded-lg resize-none outline-none text-white p-4 text-lg"
+        className="w-full h-full border-2 border-dashed bg-blue-700 rounded-lg resize-none outline-none text-white p-4 text-lg"
         placeholder="Введіть текст тут..."
       />
       {text.length === 0 && <DragAndDropInput onDrop={onDropFile} />}

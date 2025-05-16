@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --bulma-body-background-color: white;
+}
+
 @theme {
   --breakpoint-lg: 45rem;
   --breakpoint-xl: 50rem;
