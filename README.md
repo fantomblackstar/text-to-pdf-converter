@@ -1,54 +1,89 @@
-# React + TypeScript + Vite
+# Text to PDF Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that converts text to PDF documents. Built with React, TypeScript, and Vite, following the Feature-Sliced Design (FSD) architecture.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Convert text to PDF with a simple interface
+- Preview generated PDFs directly in the browser
+- View conversion history
+- Preview previously converted documents
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/yourusername/text-to-pdf-converter.git
+   cd text-to-pdf-converter
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables
+   - Create a `.env` file in the root directory based on `.env.example`
+   - Add the required API credentials
+
+### Running the Application
+
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at http://localhost:3000
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Running Tests
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm test
+# or
+yarn test
 ```
+
+## Project Architecture
+
+This project follows the Feature-Sliced Design (FSD) methodology, which is a structural methodology for frontend applications. The codebase is organized into layers:
+
+```
+src/
+├── app/          # Application initialization, global styles, providers
+├── pages/        # Compositional layer for routing and layout
+├── widgets/      # Complex composite components (features composition)
+├── features/     # User interactions, business logic
+├── entities/     # Business entities
+├── shared/       # Reusable infrastructure code (UI, libs, API)
+```
+
+### Key Components
+
+- **Text Converter**: Main widget for converting text to PDF
+- **History Table**: Widget for displaying conversion history
+- **PDF Preview**: Feature for previewing generated PDFs
+
+## Technologies
+
+- React 19
+- TypeScript
+- Vite
+- TailwindCSS
+- React Query
+- Jest & React Testing Library
+
+## License
+
+MIT
