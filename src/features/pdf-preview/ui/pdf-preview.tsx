@@ -22,9 +22,6 @@ const PdfPreview: React.FC<PdfPreviewProps> = ({ pdfDoc }) => {
 
   return (
     <div className="flex flex-col items-center gap-1">
-      <h2 className="text-lg font-semibold my-3">
-        Ваш файл доступний до перегляду:
-      </h2>
       <div
         className={cn("bg-blue-700 rounded-lg p-2 relative w-full md:w-max")}
       >

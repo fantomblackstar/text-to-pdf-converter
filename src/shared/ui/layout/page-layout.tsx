@@ -1,11 +1,19 @@
 import React from "react";
 import { Header } from "./header";
+import { cn } from "@/shared/lib";
 
-const PageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+interface PageLayoutProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const PageLayout: React.FC<PageLayoutProps> = ({ children, className }) => {
   return (
     <>
       <Header />
-      <main className="container py-10 lg:py-20">{children}</main>
+      <main className={cn("container py-10 lg:py-20", className)}>
+        {children}
+      </main>
     </>
   );
 };

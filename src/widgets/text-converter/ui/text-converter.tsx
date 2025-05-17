@@ -4,11 +4,24 @@ import { Button } from "@/shared/ui/button";
 import { useGeneratePDFMutation } from "../api/generate-pdf-mutation";
 import { PdfPreview } from "@/features/pdf-preview";
 import { cn } from "@/shared/lib";
+import { toast } from "react-toastify";
+import { useConvertingHistory } from "@/entities/pdfFile";
 
 const TextConverter: React.FC = () => {
   const [text, setText] = useState("");
+  const { saveFile } = useConvertingHistory();
 
-  const { data: pdfDoc, isPending, mutate } = useGeneratePDFMutation();
+  const {
+    data: pdfDoc,
+    isPending,
+    mutate,
+  } = useGeneratePDFMutation({
+    onSuccess: (pdfFile: string) => {
+      toast.success("Текст успішно конвертовано!");
+      saveFile(pdfFile, text);
+      setText("");
+    },
+  });
 
   const onConvertToPDFClick = () => {
     mutate(text);
@@ -30,7 +43,14 @@ const TextConverter: React.FC = () => {
       >
         Конвертувати в PDF
       </Button>
-      {pdfDoc && <PdfPreview pdfDoc={pdfDoc} />}
+      {pdfDoc && (
+        <>
+          <h2 className="text-lg text-center font-semibold my-3">
+            Ваш файл доступний до перегляду:
+          </h2>
+          <PdfPreview pdfDoc={pdfDoc} />
+        </>
+      )}
     </section>
   );
 };

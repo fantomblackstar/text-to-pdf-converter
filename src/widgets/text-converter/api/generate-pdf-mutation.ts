@@ -8,9 +8,6 @@ export const useGeneratePDFMutation = (
   return useMutation({
     mutationFn: generatePdf,
     mutationKey: ["generatePdf"],
-    onSuccess: () => {
-      toast.success("Текст успішно конвертовано!");
-    },
     onError: (error) => {
       console.error(error);
       toast.error("Помилка при конвертації тексту. Спробуйте ще раз.");
