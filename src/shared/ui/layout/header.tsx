@@ -1,5 +1,7 @@
 import React from "react";
 import pdfIcon from "../../../shared/assets/pdf-icon.svg";
+import { Link } from "react-router-dom";
+import { ROUTES_PATHS } from "@/shared/configs";
 
 const Header: React.FC = () => {
   return (
@@ -7,9 +9,19 @@ const Header: React.FC = () => {
       <div className="container flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <img src={pdfIcon} alt="PDF Icon" className="size-10" />
-          <h1 className="text-white text-2xl font-bold">Text to PDF</h1>
+          <Link
+            to={ROUTES_PATHS.HOME}
+            className="text-white text-2xl font-bold"
+          >
+            Text to PDF
+          </Link>
         </div>
-        <p className="text-white text-sm font-light italic">by VasylV</p>
+        <Link
+          to={ROUTES_PATHS.HISTORY}
+          className="text-white text-lg font-light italic"
+        >
+          Історія
+        </Link>
       </div>
     </header>
   );

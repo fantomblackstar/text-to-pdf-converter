@@ -21,7 +21,7 @@ const PreviewDialog: React.FC<PreviewDialogProps> = ({ pdfFile, onClose }) => {
       <DialogHeader>
         <DialogTitle>Попередній перегляд</DialogTitle>
       </DialogHeader>
-      <DialogContent className="sm:w-max sm:max-w-fit pt-10 relative">
+      <DialogContent className="sm:w-max sm:max-w-max pt-10 overflow-auto">
         <PdfPreview pdfDoc={pdfFile.base64} />
       </DialogContent>
     </Dialog>

@@ -30,7 +30,7 @@ const TextConverter: React.FC = () => {
   const isButtonDisabled = isPending || !text.trim();
 
   return (
-    <section>
+    <section className="mb-10">
       <TextInput onTextChange={setText} text={text} />
       <Button
         onClick={onConvertToPDFClick}
