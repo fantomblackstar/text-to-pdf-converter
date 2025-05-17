@@ -7,7 +7,7 @@ import AppProvider from "./providers";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/text-to-pdf-converter">
       <AppProvider>
         <Routing />
       </AppProvider>

@@ -7,6 +7,7 @@ import type { PdfFile } from "@/entities/pdfFile";
 import { PreviewDialog } from "./preview-dialog";
 import { TableCell } from "./table-cell";
 import { ROUTES_PATHS } from "@/shared/configs";
+import { Link } from "react-router-dom";
 
 interface HistoryTableProps {
   maxFilesToShow?: number;
@@ -78,14 +79,12 @@ const HistoryTable: React.FC<HistoryTableProps> = ({
         </table>
       </div>
       {files.length > maxFilesToShow && (
-        <div className="text-center mt-4">
-          <a
-            href={ROUTES_PATHS.HISTORY}
-            className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Переглянути всю історію
-          </a>
-        </div>
+        <Link
+          to={ROUTES_PATHS.HISTORY}
+          className="block w-fit mx-auto mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Переглянути всю історію
+        </Link>
       )}
       <PreviewDialog pdfFile={previewFile} onClose={onClosePreview} />
     </section>

@@ -25,7 +25,7 @@ const PdfPreview: React.FC<PdfPreviewProps> = ({ pdfDoc }) => {
       <div
         className={cn("bg-blue-700 rounded-lg p-2 relative w-full md:w-max")}
       >
-        <div className="w-full h-[70vh] md:h-[49.5rem] md:w-[38.25rem] overflow-auto">
+        <div className="w-full h-[70vh] md:h-[49.5rem] md:w-[28.25rem] overflow-auto max-h-[70vh]">
           <Document
             file={pdfDoc}
             onLoadSuccess={onDocumentLoadSuccess}
